@@ -9,9 +9,10 @@ Ce dépôt regroupe mes notes, codes et supports pour apprendre **MicroPython** 
 - **Environnement de travail** : VS Code + extension MicroPico, firmware MicroPython pour Pico/Pico W, sauvegarde des scripts en `main.py`.
 
 ### Brochage Pico W (utile pour repérer les GPIO)
-![Pinout Pico W](assets/pico_w_pinout.png)
+![Pinout Pico W](https://www.raspberrypi.com/documentation/microcontrollers/images/pico-2-r4-pinout.svg)
+> Source : [Raspberry pi Pico W](https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html).
 
-> Astuce : la **LED intégrée** du Pico W est accessible via `machine.Pin("LED")` (selon le firmware). Pour une LED **externe**, choisir une broche GPIO (ex. `GP15`) + résistance 220–330 Ω.
+> Astuce : la **LED intégrée** du Pico W est accessible via `machine.Pin("LED")` (selon le firmware). Pour une LED **externe**, choisir une broche GPIO (ex. `GP16`) + résistance 220–330 Ω.
 
 ---
 
@@ -38,8 +39,9 @@ Chaque sous-dossier possède un `README.md` avec les explications, schémas et c
 ```python
 from machine import Pin
 from time import sleep
-led = Pin("LED", Pin.OUT)  # ou Pin(15, Pin.OUT) avec LED externe
+led = Pin("LED", Pin.OUT)  # ou Pin(16, Pin.OUT) avec LED externe
 while True:
     led.toggle()
     sleep(0.5)
 ```
+
